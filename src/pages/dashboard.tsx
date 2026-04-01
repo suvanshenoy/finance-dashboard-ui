@@ -1,3 +1,5 @@
+import * as Layouts from "../components/layouts";
+
 export function Dashboard() {
-	return <h1>dashboard page</h1>;
+	return <Layouts.Header />;
 }
