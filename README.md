@@ -1,1 +1,1 @@
-# finance-dashboard-ui
+# Finance Dashboard UI
