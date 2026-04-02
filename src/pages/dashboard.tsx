@@ -8,6 +8,7 @@ export function Dashboard() {
 			<div>
 				<Sections.SummaryCards />
 				<Sections.ChartsSection />
+				<Sections.MainContent />
 			</div>
 		</>
 	);
