@@ -5,11 +5,11 @@ export function Dashboard() {
 	return (
 		<>
 			<Layouts.Header />
-			<div>
+			<Layouts.DashboardLayout>
 				<Sections.SummaryCards />
 				<Sections.ChartsSection />
 				<Sections.MainContent />
-			</div>
+			</Layouts.DashboardLayout>
 		</>
 	);
 }
