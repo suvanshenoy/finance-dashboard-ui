@@ -35,7 +35,7 @@ export function TransactionList() {
 		return category?.icon || "📊";
 	};
 
-	const handleSort = (field: string) => {
+	const handleSort = (field: "date" | "amount" | "category") => {
 		const newOrder =
 			filters.sortBy === field && filters.sortOrder === "desc" ? "asc" : "desc";
 		setFilters({ sortBy: field, sortOrder: newOrder });
@@ -133,14 +133,9 @@ export function TransactionList() {
 									</button>
 								</th>
 								<th className="px-6 py-3 text-left">
-									<button
-										type="button"
-										onClick={() => handleSort("description")}
-										className="flex items-center gap-1 text-xs font-medium text-muted-foreground uppercase tracking-wider hover:text-foreground"
-									>
+									<span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
 										Description
-										<LucideReact.ArrowUpDown className="w-3 h-3" />
-									</button>
+									</span>
 								</th>
 								<th className="px-6 py-3 text-left">
 									<button

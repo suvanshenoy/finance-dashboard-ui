@@ -1,6 +1,8 @@
 import * as Recharts from "recharts";
 import * as Store from "../../store";
 
+type PieLabelRenderProps = Recharts.PieLabelRenderProps;
+
 type ChartData = {
 	category: string;
 	amount: number;
@@ -58,10 +60,10 @@ export function SpendingChart() {
 		return null;
 	};
 
-	const renderCustomLabel = (props: ChartData) => {
-		const { amount } = props;
+	const renderCustomLabel = (props: PieLabelRenderProps) => {
+		const { payload } = props;
 		const total = chartData.reduce((sum, item) => sum + item.amount, 0);
-		const percentage = ((amount / total) * 100).toFixed(1);
+		const percentage = ((payload.amount / total) * 100).toFixed(1);
 		return `${percentage}%`;
 	};
 
