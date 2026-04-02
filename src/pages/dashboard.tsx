@@ -7,6 +7,7 @@ export function Dashboard() {
 			<Layouts.Header />
 			<div>
 				<Sections.SummaryCards />
+				<Sections.ChartsSection />
 			</div>
 		</>
 	);
