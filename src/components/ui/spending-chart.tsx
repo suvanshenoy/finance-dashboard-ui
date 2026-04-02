@@ -83,7 +83,7 @@ export function SpendingChart() {
 			<h3 className="text-lg font-semibold text-foreground mb-4">
 				Spending Breakdown
 			</h3>
-			<div className="h-70">
+			<div className="h-48 sm:h-56 md:h-70">
 				<Recharts.ResponsiveContainer width="100%" height="100%">
 					<Recharts.PieChart>
 						<Recharts.Pie

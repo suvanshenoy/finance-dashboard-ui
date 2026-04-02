@@ -9,16 +9,16 @@ export function Header() {
 		<header className="bg-card border-b border-border shadow-sm">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
-					<div className="flex items-center gap-3">
-						<div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-							<LucideReact.DollarSign className="w-5 h-5 text-white" />
+					<div className="flex items-center gap-2 sm:gap-3">
+						<div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+							<LucideReact.DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
 						</div>
-						<h1 className="text-xl font-bold text-foreground">
+						<h1 className="text-lg sm:text-xl font-bold text-foreground">
 							Finance Dashboard
 						</h1>
 					</div>
 
-					<div className="flex items-center gap-4">
+					<div className="flex items-center gap-2 sm:gap-4">
 						<Ui.RoleToggle />
 						<button
 							type="button"

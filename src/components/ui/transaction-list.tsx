@@ -119,7 +119,7 @@ export function TransactionList() {
 						No transactions found
 					</div>
 				) : (
-					<table className="w-full">
+					<table className="w-full min-w-[600px]">
 						<thead className="bg-muted">
 							<tr>
 								<th className="px-6 py-3 text-left">

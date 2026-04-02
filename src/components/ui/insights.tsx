@@ -85,7 +85,7 @@ export function Insights() {
 				Financial Insights
 			</h3>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 				<div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
 					<div className="flex items-center gap-3 mb-2">
 						<div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">

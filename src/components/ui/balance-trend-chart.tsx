@@ -22,7 +22,7 @@ export function BalanceTrendChart() {
 			<h3 className="text-lg font-semibold text-foreground mb-4">
 				Balance Trend
 			</h3>
-			<div className="h-64">
+			<div className="h-48 sm:h-56 md:h-64">
 				<Recharts.ResponsiveContainer width="100%" height="100%">
 					<Recharts.LineChart data={balanceTrend}>
 						<Recharts.CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
