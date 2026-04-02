@@ -41,14 +41,15 @@ export function SpendingChart() {
 		if (active && payload?.length) {
 			const data = payload[0].payload;
 			return (
-				<div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+				<div
+					className="rounded-lg border border-border p-3 shadow-lg"
+					style={{ backgroundColor: "hsl(var(--popover))" }}
+				>
 					<div className="flex items-center gap-2">
 						<span className="text-lg">{data.icon}</span>
-						<span className="font-medium text-gray-900 dark:text-white">
-							{data.category}
-						</span>
+						<span className="font-medium text-foreground">{data.category}</span>
 					</div>
-					<p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+					<p className="text-sm text-muted-foreground mt-1">
 						{formatCurrency(data.amount)}
 					</p>
 				</div>
@@ -66,11 +67,11 @@ export function SpendingChart() {
 
 	if (spendingData.length === 0) {
 		return (
-			<div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-				<h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+			<div className="bg-card rounded-lg shadow-sm border border-border p-6">
+				<h3 className="text-lg font-semibold text-foreground mb-4">
 					Spending Breakdown
 				</h3>
-				<div className="flex items-center justify-center h-64 text-gray-500 dark:text-gray-400">
+				<div className="flex items-center justify-center h-64 text-muted-foreground">
 					No expense data available
 				</div>
 			</div>
@@ -78,8 +79,8 @@ export function SpendingChart() {
 	}
 
 	return (
-		<div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-			<h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+		<div className="bg-card rounded-lg shadow-sm border border-border p-6">
+			<h3 className="text-lg font-semibold text-foreground mb-4">
 				Spending Breakdown
 			</h3>
 			<div className="h-70">

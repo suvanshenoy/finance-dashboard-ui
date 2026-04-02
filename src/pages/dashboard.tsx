@@ -9,21 +9,13 @@ export function Dashboard() {
 	React.useEffect(() => {
 		if (darkMode) {
 			document.documentElement.classList.add("dark");
-			document.body.className = document.body.className
-				.replace(/bg-\w+-\d+/g, "")
-				.trim();
-			document.body.classList.add("bg-gray-900");
 		} else {
 			document.documentElement.classList.remove("dark");
-			document.body.className = document.body.className
-				.replace(/bg-\w+-\d+/g, "")
-				.trim();
-			document.body.classList.add("bg-gray-50");
 		}
 	}, [darkMode]);
 
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen bg-background text-foreground">
 			<Layouts.Header />
 			<Layouts.DashboardLayout>
 				<Sections.SummaryCards />

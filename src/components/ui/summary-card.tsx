@@ -20,33 +20,32 @@ export function SummaryCard({
 	return (
 		<div
 			className={cn(
-				"bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-all hover:shadow-md",
+				"bg-card rounded-lg shadow-sm border border-border p-6 transition-all hover:shadow-md",
 				className,
 			)}
 		>
 			<div className="flex items-center justify-between">
 				<div>
-					<p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+					<p className="text-sm font-medium text-muted-foreground">
 						{title}
 					</p>
-					<p className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
+					<p className="text-2xl font-bold text-foreground mt-2">
 						{value}
 					</p>
 					{change && (
 						<p
 							className={cn(
 								"text-sm mt-2",
-								changeType === "positive" &&
-									"text-green-600 dark:text-green-400",
-								changeType === "negative" && "text-red-600 dark:text-red-400",
-								changeType === "neutral" && "text-gray-600 dark:text-gray-400",
+								changeType === "positive" && "text-green-600",
+								changeType === "negative" && "text-red-600",
+								changeType === "neutral" && "text-muted-foreground",
 							)}
 						>
 							{change}
 						</p>
 					)}
 				</div>
-				{icon && <div className="text-gray-400 dark:text-gray-500">{icon}</div>}
+				{icon && <div className="text-muted-foreground">{icon}</div>}
 			</div>
 		</div>
 	);

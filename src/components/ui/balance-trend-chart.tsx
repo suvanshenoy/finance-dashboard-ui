@@ -18,8 +18,8 @@ export function BalanceTrendChart() {
 	};
 
 	return (
-		<div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-			<h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+		<div className="bg-card rounded-lg shadow-sm border border-border p-6">
+			<h3 className="text-lg font-semibold text-foreground mb-4">
 				Balance Trend
 			</h3>
 			<div className="h-64">

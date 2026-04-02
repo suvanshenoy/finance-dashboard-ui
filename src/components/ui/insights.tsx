@@ -80,8 +80,8 @@ export function Insights() {
 	const monthlyComparison = getMonthlyComparison();
 
 	return (
-		<div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-			<h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">
+		<div className="bg-card rounded-lg shadow-sm border border-border p-6">
+			<h3 className="text-lg font-semibold text-foreground mb-6">
 				Financial Insights
 			</h3>
 
@@ -91,7 +91,7 @@ export function Insights() {
 						<div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							📊
 						</div>
-						<h4 className="font-medium text-gray-900 dark:text-white">
+						<h4 className="font-medium text-foreground">
 							Highest Spending
 						</h4>
 					</div>
@@ -100,12 +100,12 @@ export function Insights() {
 							<p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
 								{formatCurrency(highestSpending.amount)}
 							</p>
-							<p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+							<p className="text-sm text-muted-foreground mt-1">
 								{highestSpending.category}
 							</p>
 						</div>
 					) : (
-						<p className="text-gray-500 dark:text-gray-400">No expense data</p>
+						<p className="text-muted-foreground">No expense data</p>
 					)}
 				</div>
 
@@ -114,7 +114,7 @@ export function Insights() {
 						<div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							📈
 						</div>
-						<h4 className="font-medium text-gray-900 dark:text-white">
+						<h4 className="font-medium text-foreground">
 							Monthly Comparison
 						</h4>
 					</div>
@@ -123,7 +123,7 @@ export function Insights() {
 							{Number(monthlyComparison.change) > 0 ? "+" : ""}
 							{monthlyComparison.change}%
 						</p>
-						<p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+						<p className="text-sm text-muted-foreground mt-1">
 							vs last month
 						</p>
 					</div>
@@ -134,7 +134,7 @@ export function Insights() {
 						<div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							💰
 						</div>
-						<h4 className="font-medium text-gray-900 dark:text-white">
+						<h4 className="font-medium text-foreground">
 							Savings Rate
 						</h4>
 					</div>
@@ -147,7 +147,7 @@ export function Insights() {
 								: 0}
 							%
 						</p>
-						<p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+						<p className="text-sm text-muted-foreground mt-1">
 							of income saved
 						</p>
 					</div>
@@ -158,7 +158,7 @@ export function Insights() {
 						<div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							📅
 						</div>
-						<h4 className="font-medium text-gray-900 dark:text-white">
+						<h4 className="font-medium text-foreground">
 							Average Transaction
 						</h4>
 					</div>
@@ -166,7 +166,7 @@ export function Insights() {
 						<p className="text-2xl font-bold text-orange-600 dark:text-orange-400">
 							{formatCurrency(getAverageTransaction())}
 						</p>
-						<p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+						<p className="text-sm text-muted-foreground mt-1">
 							per expense
 						</p>
 					</div>
@@ -177,7 +177,7 @@ export function Insights() {
 						<div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							🎯
 						</div>
-						<h4 className="font-medium text-gray-900 dark:text-white">
+						<h4 className="font-medium text-foreground">
 							Budget Alert
 						</h4>
 					</div>
@@ -185,7 +185,7 @@ export function Insights() {
 						<p className="text-2xl font-bold text-red-600 dark:text-red-400">
 							{Number(totalExpenses) > Number(totalIncome) ? "Over" : "Under"}
 						</p>
-						<p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+						<p className="text-sm text-muted-foreground mt-1">
 							monthly budget
 						</p>
 					</div>
@@ -196,7 +196,7 @@ export function Insights() {
 						<div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							📋
 						</div>
-						<h4 className="font-medium text-gray-900 dark:text-white">
+						<h4 className="font-medium text-foreground">
 							Total Transactions
 						</h4>
 					</div>
@@ -204,7 +204,7 @@ export function Insights() {
 						<p className="text-2xl font-bold text-teal-600 dark:text-teal-400">
 							{transactions.length}
 						</p>
-						<p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+						<p className="text-sm text-muted-foreground mt-1">
 							this period
 						</p>
 					</div>
