@@ -6,7 +6,7 @@ export function Header() {
 	const { darkMode, toggleDarkMode } = Store.useFinanceStore();
 
 	return (
-		<header className="bg-card border-b border-border shadow-sm">
+		<header className="border-b shadow-sm">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center gap-2 sm:gap-3">

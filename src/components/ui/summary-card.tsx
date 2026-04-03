@@ -20,18 +20,14 @@ export function SummaryCard({
 	return (
 		<div
 			className={cn(
-				"bg-card rounded-lg shadow-sm border border-border p-6 transition-all hover:shadow-md",
+				"rounded-lg shadow-sm border p-6 transition-all hover:shadow-md",
 				className,
 			)}
 		>
 			<div className="flex items-center justify-between">
 				<div>
-					<p className="text-sm font-medium text-muted-foreground">
-						{title}
-					</p>
-					<p className="text-2xl font-bold text-foreground mt-2">
-						{value}
-					</p>
+					<p className="text-sm font-medium text-muted-foreground">{title}</p>
+					<p className="text-2xl font-bold text-foreground mt-2">{value}</p>
 					{change && (
 						<p
 							className={cn(

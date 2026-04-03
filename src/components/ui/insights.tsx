@@ -80,7 +80,7 @@ export function Insights() {
 	const monthlyComparison = getMonthlyComparison();
 
 	return (
-		<div className="bg-card rounded-lg shadow-sm border border-border p-6">
+		<div className="rounded-lg shadow-sm border p-6">
 			<h3 className="text-lg font-semibold text-foreground mb-6">
 				Financial Insights
 			</h3>
@@ -91,9 +91,7 @@ export function Insights() {
 						<div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							📊
 						</div>
-						<h4 className="font-medium text-foreground">
-							Highest Spending
-						</h4>
+						<h4 className="font-medium text-foreground">Highest Spending</h4>
 					</div>
 					{highestSpending ? (
 						<div>
@@ -114,18 +112,14 @@ export function Insights() {
 						<div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							📈
 						</div>
-						<h4 className="font-medium text-foreground">
-							Monthly Comparison
-						</h4>
+						<h4 className="font-medium text-foreground">Monthly Comparison</h4>
 					</div>
 					<div>
 						<p className="text-2xl font-bold text-green-600 dark:text-green-400">
 							{Number(monthlyComparison.change) > 0 ? "+" : ""}
 							{monthlyComparison.change}%
 						</p>
-						<p className="text-sm text-muted-foreground mt-1">
-							vs last month
-						</p>
+						<p className="text-sm text-muted-foreground mt-1">vs last month</p>
 					</div>
 				</div>
 
@@ -134,9 +128,7 @@ export function Insights() {
 						<div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							💰
 						</div>
-						<h4 className="font-medium text-foreground">
-							Savings Rate
-						</h4>
+						<h4 className="font-medium text-foreground">Savings Rate</h4>
 					</div>
 					<div>
 						<p className="text-2xl font-bold text-purple-600 dark:text-purple-400">
@@ -158,17 +150,13 @@ export function Insights() {
 						<div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							📅
 						</div>
-						<h4 className="font-medium text-foreground">
-							Average Transaction
-						</h4>
+						<h4 className="font-medium text-foreground">Average Transaction</h4>
 					</div>
 					<div>
 						<p className="text-2xl font-bold text-orange-600 dark:text-orange-400">
 							{formatCurrency(getAverageTransaction())}
 						</p>
-						<p className="text-sm text-muted-foreground mt-1">
-							per expense
-						</p>
+						<p className="text-sm text-muted-foreground mt-1">per expense</p>
 					</div>
 				</div>
 
@@ -177,17 +165,13 @@ export function Insights() {
 						<div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							🎯
 						</div>
-						<h4 className="font-medium text-foreground">
-							Budget Alert
-						</h4>
+						<h4 className="font-medium text-foreground">Budget Alert</h4>
 					</div>
 					<div>
 						<p className="text-2xl font-bold text-red-600 dark:text-red-400">
 							{Number(totalExpenses) > Number(totalIncome) ? "Over" : "Under"}
 						</p>
-						<p className="text-sm text-muted-foreground mt-1">
-							monthly budget
-						</p>
+						<p className="text-sm text-muted-foreground mt-1">monthly budget</p>
 					</div>
 				</div>
 
@@ -196,17 +180,13 @@ export function Insights() {
 						<div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
 							📋
 						</div>
-						<h4 className="font-medium text-foreground">
-							Total Transactions
-						</h4>
+						<h4 className="font-medium text-foreground">Total Transactions</h4>
 					</div>
 					<div>
 						<p className="text-2xl font-bold text-teal-600 dark:text-teal-400">
 							{transactions.length}
 						</p>
-						<p className="text-sm text-muted-foreground mt-1">
-							this period
-						</p>
+						<p className="text-sm text-muted-foreground mt-1">this period</p>
 					</div>
 				</div>
 			</div>

@@ -44,7 +44,7 @@ export function SpendingChart() {
 			const data = payload[0].payload;
 			return (
 				<div
-					className="rounded-lg border border-border p-3 shadow-lg"
+					className="rounded-lg border p-3 shadow-lg"
 					style={{ backgroundColor: "hsl(var(--popover))" }}
 				>
 					<div className="flex items-center gap-2">
@@ -69,7 +69,7 @@ export function SpendingChart() {
 
 	if (spendingData.length === 0) {
 		return (
-			<div className="bg-card rounded-lg shadow-sm border border-border p-6">
+			<div className="rounded-lg shadow-sm border p-6">
 				<h3 className="text-lg font-semibold text-foreground mb-4">
 					Spending Breakdown
 				</h3>
@@ -81,7 +81,7 @@ export function SpendingChart() {
 	}
 
 	return (
-		<div className="bg-card rounded-lg shadow-sm border border-border p-6">
+		<div className="rounded-lg shadow-sm border p-6">
 			<h3 className="text-lg font-semibold text-foreground mb-4">
 				Spending Breakdown
 			</h3>

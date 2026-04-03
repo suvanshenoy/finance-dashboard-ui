@@ -48,8 +48,8 @@ export function TransactionList() {
 	};
 
 	return (
-		<div className="bg-card rounded-lg shadow-sm border border-border">
-			<div className="p-6 border-b border-border">
+		<div className="rounded-lg shadow-sm border">
+			<div className="p-6 border-b">
 				<div className="flex items-center justify-between mb-4">
 					<h3 className="text-lg font-semibold text-foreground">
 						Transactions
@@ -73,16 +73,16 @@ export function TransactionList() {
 							placeholder="Search transactions..."
 							value={filters.search}
 							onChange={(e) => setFilters({ search: e.target.value })}
-							className="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-foreground"
-						style={{ backgroundColor: 'hsl(var(--popover))' }}
+							className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-foreground"
+							style={{ backgroundColor: "hsl(var(--popover))" }}
 						/>
 					</div>
 
 					<select
 						value={filters.category}
 						onChange={(e) => setFilters({ category: e.target.value })}
-						className="px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-foreground"
-					style={{ backgroundColor: 'hsl(var(--popover))' }}
+						className="px-4 py-2 border  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-foreground"
+						style={{ backgroundColor: "hsl(var(--popover))" }}
 					>
 						<option value="all">All Categories</option>
 						{categories.map((cat) => (
@@ -95,8 +95,8 @@ export function TransactionList() {
 					<select
 						value={filters.type}
 						onChange={(e) => setFilters({ type: e.target.value })}
-						className="px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-foreground"
-					style={{ backgroundColor: 'hsl(var(--popover))' }}
+						className="px-4 py-2 border  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-foreground"
+						style={{ backgroundColor: "hsl(var(--popover))" }}
 					>
 						<option value="all">All Types</option>
 						<option value="income">Income</option>
@@ -119,7 +119,7 @@ export function TransactionList() {
 						No transactions found
 					</div>
 				) : (
-					<table className="w-full min-w-[600px]">
+					<table className="w-full min-w-150">
 						<thead className="bg-muted">
 							<tr>
 								<th className="px-6 py-3 text-left">
@@ -166,10 +166,7 @@ export function TransactionList() {
 						</thead>
 						<tbody className="divide-y divide-border">
 							{transactions.map((transaction) => (
-								<tr
-									key={transaction.id}
-									className="hover:bg-muted"
-								>
+								<tr key={transaction.id} className="hover:bg-muted">
 									<td className="px-6 py-4 whitespace-nowrap text-sm text-foreground">
 										{formatDate(transaction.date)}
 									</td>
