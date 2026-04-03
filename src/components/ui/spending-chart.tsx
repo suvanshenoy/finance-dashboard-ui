@@ -1,3 +1,4 @@
+import * as React from "react";
 import * as Recharts from "recharts";
 import * as Store from "../../store";
 
@@ -13,6 +14,7 @@ type ChartData = {
 export function SpendingChart() {
 	const { getSpendingByCategory, categories } = Store.useFinanceStore();
 	const spendingData = getSpendingByCategory();
+	const [dimensions, setDimensions] = React.useState({ width: 0, height: 0 });
 
 	const formatCurrency = (value: number) => {
 		return new Intl.NumberFormat("en-US", {
@@ -22,14 +24,15 @@ export function SpendingChart() {
 		}).format(value);
 	};
 
-	const chartData: ChartData[] = spendingData.map((item) => {
-		const category = categories.find((c) => c.name === item.category);
-		return {
-			...item,
-			color: category?.color || "#6b7280",
-			icon: category?.icon || "📊",
+	React.useEffect(() => {
+		const handleResize = () => {
+			setDimensions({ width: window.innerWidth, height: window.innerHeight });
 		};
-	});
+		
+		handleResize();
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	const CustomTooltip = ({
 		active,
@@ -60,12 +63,49 @@ export function SpendingChart() {
 		return null;
 	};
 
+	const getOuterRadius = () => {
+		if (dimensions.width < 640) return 50;
+		if (dimensions.width < 768) return 60;
+		if (dimensions.width < 1024) return 70;
+		return 80;
+	};
+
+	const getLegendProps = () => {
+		if (dimensions.width < 640) {
+			return {
+				wrapperStyle: {
+					paddingTop: '10px',
+					fontSize: '12px'
+				},
+				layout: 'horizontal' as const,
+				align: 'center' as const
+			};
+		}
+		return {
+			wrapperStyle: {
+				paddingTop: '20px',
+				fontSize: '14px'
+			},
+			layout: 'vertical' as const,
+			align: 'right' as const
+		};
+	};
+
 	const renderCustomLabel = (props: PieLabelRenderProps) => {
 		const { payload } = props;
 		const total = chartData.reduce((sum, item) => sum + item.amount, 0);
 		const percentage = ((payload.amount / total) * 100).toFixed(1);
 		return `${percentage}%`;
 	};
+
+	const chartData: ChartData[] = spendingData.map((item) => {
+		const category = categories.find((c) => c.name === item.category);
+		return {
+			...item,
+			color: category?.color || "#6b7280",
+			icon: category?.icon || "📊",
+		};
+	});
 
 	if (spendingData.length === 0) {
 		return (
@@ -85,7 +125,7 @@ export function SpendingChart() {
 			<h3 className="text-lg font-semibold text-foreground mb-4">
 				Spending Breakdown
 			</h3>
-			<div className="h-48 sm:h-56 md:h-70">
+			<div className="h-64 sm:h-72 md:h-80 lg:h-96">
 				<Recharts.ResponsiveContainer width="100%" height="100%">
 					<Recharts.PieChart>
 						<Recharts.Pie
@@ -94,7 +134,7 @@ export function SpendingChart() {
 							cy="50%"
 							labelLine={false}
 							label={renderCustomLabel}
-							outerRadius={80}
+							outerRadius={getOuterRadius()}
 							fill="#8884d8"
 							dataKey="amount"
 						>
@@ -104,12 +144,14 @@ export function SpendingChart() {
 						</Recharts.Pie>
 						<Recharts.Tooltip content={<CustomTooltip />} />
 						<Recharts.Legend
+							{...getLegendProps()}
+							iconType="circle"
 							formatter={(value: string) => {
 								const item = chartData.find((d) => d.category === value);
 								return (
-									<span className="flex items-center gap-2">
-										<span>{item?.icon}</span>
-										<span>{value}</span>
+									<span className="flex items-center gap-1 sm:gap-2">
+										<span className="text-sm sm:text-base">{item?.icon}</span>
+										<span className="text-xs sm:text-sm">{value}</span>
 									</span>
 								);
 							}}
