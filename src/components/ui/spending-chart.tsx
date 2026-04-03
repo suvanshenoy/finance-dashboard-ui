@@ -137,6 +137,7 @@ export function SpendingChart() {
 							outerRadius={getOuterRadius()}
 							fill="#8884d8"
 							dataKey="amount"
+							nameKey="category"
 						>
 							{chartData.map((entry, index) => (
 								<Recharts.Cell key={`cell-${index}`} fill={entry.color} />
